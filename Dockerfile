@@ -14,9 +14,9 @@ RUN apt-get install iptables openssl openvpn -y
 RUN mkdir /etc/openvpn/keys
 COPY server.conf /etc/openvpn/server.conf
 
-# Add the init script
-COPY docker-entry.sh /docker-entry.sh
-RUN chmod +x /docker-entry.sh
+# Add the init script and configuration scripts
+COPY docker-entrypoint /docker-entrypoint
+RUN chmod +x  /docker-entrypoint/*
 
 # Environment variables
 ENV KEY_COUNTRY EN
@@ -31,4 +31,4 @@ ENV KEY_NAME None
 VOLUME /etc/openvpn/keys
 
 EXPOSE 443
-CMD /docker-entry.sh
+CMD /docker-entrypoint/docker-entry.sh
