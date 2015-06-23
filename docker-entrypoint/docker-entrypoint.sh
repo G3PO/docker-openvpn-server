@@ -5,9 +5,7 @@ if [ `ls -a /etc/openvpn/keys | sed -e "/\.$/d" | wc -l` = 0 ]
 then
   echo "/etc/openvpn/easy-rsa/ is empty"
   echo "Configuring the server..."
-
-  /etc/openvpn/configuration/server-configuration.sh
-
+  /docker-entrypoint/server-configuration.sh
   echo "Configuration is finished."
 else
   echo "/etc/openvpn/easy-rsa/ is not empty"
