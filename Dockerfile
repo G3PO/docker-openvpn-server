@@ -13,6 +13,7 @@ RUN apt-get install iptables openssl openvpn -y
 # Minimal configuration of the server
 RUN mkdir /etc/openvpn/easy-rsa/
 COPY server.conf /etc/openvpn/server.conf
+COPY client.conf /etc/openvpn/client.conf
 
 # Add the init script and configuration scripts
 COPY docker-entrypoint /docker-entrypoint
@@ -26,6 +27,8 @@ ENV KEY_ORG None
 ENV KEY_EMAIL xxxx@xxx.xx
 ENV KEY_CN NO
 ENV KEY_NAME None
+ENV SERVER_IP A.B.C.D
+ENV SERVER_PORT 443
 
 # Volumes
 VOLUME /etc/openvpn/easy-rsa/
