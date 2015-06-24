@@ -11,6 +11,7 @@ do
   # Generate keys if doesn't exist
   if [ ! -e "keys/${!var}.key" ]; then
     echo "Keys generation for ${!var}..."
+    sed -Ei "s/^export KEY_CN.*/export KEY_CN=${!var}/" ./vars
     sed -Ei "s/^export KEY_NAME.*/export KEY_NAME=${!var}/" ./vars
     source ./vars
     ./build-key --batch "${!var}"
