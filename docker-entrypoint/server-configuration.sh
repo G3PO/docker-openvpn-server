@@ -2,6 +2,7 @@
 
 # Copy configuration files
 mkdir /etc/openvpn/easy-rsa/
+mkdir /etc/openvpn/keys
 cp -r /usr/share/doc/openvpn/examples/easy-rsa/2.0/* /etc/openvpn/easy-rsa/
 
 # Changing vars file

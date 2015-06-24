@@ -11,7 +11,7 @@ RUN apt-get update && apt-get upgrade -y --force-yes
 RUN apt-get install iptables openssl openvpn -y
 
 # Minimal configuration of the server
-RUN mkdir /etc/openvpn/keys
+RUN mkdir /etc/openvpn/easy-rsa/
 COPY server.conf /etc/openvpn/server.conf
 
 # Add the init script and configuration scripts
@@ -28,7 +28,8 @@ ENV KEY_CN NO
 ENV KEY_NAME None
 
 # Volumes
-VOLUME /etc/openvpn/keys
+VOLUME /etc/openvpn/easy-rsa/
+VOLUME /etc/openvpn/clientconf
 
 EXPOSE 443
 CMD /docker-entrypoint/docker-entry.sh
