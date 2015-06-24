@@ -32,4 +32,4 @@ VOLUME /etc/openvpn/easy-rsa/
 VOLUME /etc/openvpn/clientconf
 
 EXPOSE 443
-CMD /docker-entrypoint/docker-entry.sh
+CMD /docker-entrypoint/docker-entrypoint.sh

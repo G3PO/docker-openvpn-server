@@ -27,3 +27,11 @@ echo "Done."
 
 # Generate clients
 /docker-entrypoint/clients-configuration.sh
+
+# Launch openvpn
+/etc/init.d/openvpn start
+
+# Make the docker turn on himself
+while [ true ]; do
+  sleep 60
+done
