@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Copy original directory
+cp -r /etc/openvpn-model/* /etc/openvpn/
+
 # Copy configuration files
 mkdir /etc/openvpn/keys
 cp -r /usr/share/doc/openvpn/examples/easy-rsa/2.0/* /etc/openvpn/easy-rsa/

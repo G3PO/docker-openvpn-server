@@ -11,11 +11,14 @@ To create the image `lerenn/docker-openvpn-server`, execute the following comman
 
 To run the image with a minimum of arguments, execute the following command :
 
-    docker run -d -e CLIENT1=client --privileged -v /path/in/host:/etc/openvpn/clientconf -p 443:443 lerenn/docker-openvpn-server
+    docker run -d -e CLIENT1=client --privileged -p 443:443 lerenn/docker-openvpn-server
 
-However, it is strongly recommended to set more arguments. With the following launch command, you will have a persistent server and persistent clients with a usable clients configurations :
+However, it is strongly recommended to set more arguments. With the following launch command, you will have a persistent server with usable clients configurations :
 
-    docker run -d -e CLIENT1=client -e SERVER_IP=X.X.X.X -e SERVER_PORT=443 --privileged -v /path/in/host:/etc/openvpn/easy-rsa -v /path/in/host:/etc/openvpn/clientconf -p 443:443 lerenn/docker-openvpn-server
+    docker run -d -e CLIENT1=client -e SERVER_IP=X.X.X.X -e SERVER_PORT=443 --privileged -v /path/in/host:/etc/openvpn -p 443:443 lerenn/docker-openvpn-server
+
+##Collect clients configurations
+You will find clients configurations at `/etc/openvpn/clientconf`, or in your mounted volume at the directory `clientconf`.
 
 ##Arguments
 
@@ -40,9 +43,5 @@ Clients configuration:
 ###Volumes
 
 #### Server files
-The server files and configuration are placed in the volume `/etc/openvpn/easy-rsa`. To persist server files and configuration, add this argument to the launch command : `-v /path/in/host:/etc/openvpn/easy-rsa`
+The server files and configuration are placed in the volume `/etc/openvpn`. To persist server files and configuration, add this argument to the launch command : `-v /path/in/host:/etc/openvpn`
 If the server directory is empty, a new server will be created. Otherwise, the old one will be used.
-
-#### Clients files
-Clients configuration are placed in the volume `/etc/openvpn/clientconf`. To access client configurations, add this argument to the launch command : `-v /path/in/host:/etc/openvpn/clientconf`
-If one of the specified client doesn't exist, its configuration will be created and exported. Otherwise, its configuration will only be exported. The client configuration can be find in the mounted `clientconf` volume.
