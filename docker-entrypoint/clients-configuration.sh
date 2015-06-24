@@ -34,7 +34,7 @@ do
   # Configuration of client.conf
   sed -Ei "s/^remote.*/remote $SERVER_IP $SERVER_PORT/" "/etc/openvpn/clientconf/${!var}/${!var}.conf"
   sed -Ei "s/^cert.*/cert ${!var}.crt/" "/etc/openvpn/clientconf/${!var}/${!var}.conf"
-  sed -Ei "s/^key.*/key ${!var}.key/" "/etc/openvpn/clientconf/${!var}/${!var}.conf"
+  sed -Ei "s/^key .*/key ${!var}.key/" "/etc/openvpn/clientconf/${!var}/${!var}.conf"
 
   # Copy for windows clients
   cp "/etc/openvpn/clientconf/${!var}/${!var}.conf" "/etc/openvpn/clientconf/${!var}/${!var}.ovpn"
