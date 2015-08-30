@@ -25,6 +25,11 @@ iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 iptables -t nat -A POSTROUTING -s 10.8.0.2/24 -o eth0 -j MASQUERADE
 echo "Done."
 
+# Share port
+if [ $SHARE_PORT_CONTAINER != "none" ]; then
+  /docker-entrypoint/port-sharing.sh
+fi
+
 # Generate clients
 /docker-entrypoint/clients-configuration.sh
 
