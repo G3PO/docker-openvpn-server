@@ -4,19 +4,19 @@ You can share the vpn port with an other container (example: NGINX on 443).
 
 ##Build
 
-To create the image `lerenn/docker-openvpn-server`, execute the following command on the docker-openvpn-server folder:
+To create the image `lerenn/openvpn-server`, execute the following command on the openvpn-server project folder:
 
-    docker build -t lerenn/docker-openvpn-server .
+    docker build -t lerenn/openvpn-server .
 
 ##Run
 
 To run the image with a minimum of arguments, execute the following command :
 
-    docker run -d -e CLIENT1=client --privileged -p 443:443 lerenn/docker-openvpn-server
+    docker run -d -e CLIENT1=client --privileged -p 443:443 lerenn/openvpn-server
 
 However, it is strongly recommended to set more arguments. With the following launch command, you will have a persistent server with usable clients configurations :
 
-    docker run -d -e CLIENT1=client -e SERVER_IP=X.X.X.X -e SERVER_PORT=443 --privileged -v /path/in/host:/etc/openvpn -p 443:443 lerenn/docker-openvpn-server
+    docker run -d -e CLIENT1=client -e SERVER_IP=X.X.X.X -e SERVER_PORT=443 --privileged -v /path/in/host:/etc/openvpn -p 443:443 lerenn/openvpn-server
 
 ##Collect clients configurations
 You will find clients configurations at `/etc/openvpn/clientconf`, or in your mounted volume at the directory `clientconf`.
