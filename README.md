@@ -34,24 +34,24 @@ Otherwise, the server won't be able to run properly.
 
 ####Server configuration:
 
- - **KEY_COUNTRY**: The key country of the server. Defaults to `EN`.
- - **KEY_PROVINCE**: The province of the server. Defaults to `None`.
- - **KEY_CITY**: The city of the server. Defaults to `None`.
- - **KEY_ORG**: The organisation of the server. Defaults to `None`.
- - **KEY_EMAIL**: Your email or the email of the administrator. Defaults to `xxxx@xxx.xx`.
- - **KEY_CN**: Name of your domain. Defaults to `NO`.
- - **KEY_NAME**: Name of your server. Defaults to `None`.
+* **KEY_COUNTRY**: The key country of the server. Defaults to `EN`.
+* **KEY_PROVINCE**: The province of the server. Defaults to `None`.
+* **KEY_CITY**: The city of the server. Defaults to `None`.
+* **KEY_ORG**: The organisation of the server. Defaults to `None`.
+* **KEY_EMAIL**: Your email or the email of the administrator. Defaults to `xxxx@xxx.xx`.
+* **KEY_CN**: Name of your domain. Defaults to `NO`.
+* **KEY_NAME**: Name of your server. Defaults to `None`.
 
 #####Port sharing
 
- - **SHARE_PORT_CONTAINER**: Name of the container to share a port with (must be linked). Defaults to `none`.
- - **SHARE_PORT_NUMBER**: Port number of the container. Defaults to `443`.
+* **SHARE_PORT_CONTAINER**: Name of the container to share a port with (must be linked). Defaults to `none`.
+* **SHARE_PORT_NUMBER**: Port number of the container. Defaults to `443`.
 
 ####Clients configuration:
 
- - **CLIENTX**: The name of one of the server client. You have to replace `X` by the number of the client. Example: `CLIENT1`, `CLIENT2`, ...
- - **SERVER_IP**: The server ip which will be put in the client configuration. Defaults to `A.B.C.D`.
- - **SERVER_PORT**: The server port which will be put in the client configuration (It is the one you will choose when you will launch the image). Defaults to `443`.
+* **CLIENTX**: The name of one of the server client. You have to replace `X` by the number of the client. Example: `CLIENT1`, `CLIENT2`, ...
+* **SERVER_IP**: The server ip which will be put in the client configuration. Defaults to `A.B.C.D`.
+* **SERVER_PORT**: The server port which will be put in the client configuration (It is the one you will choose when you will launch the image). Defaults to `443`.
 
 ###Volumes
 
