@@ -59,3 +59,7 @@ Otherwise, the server won't be able to run properly.
 
 The server files and configuration are placed in the volume `/etc/openvpn`. To persist server files and configuration, add this argument to the launch command : `-v /path/in/host:/etc/openvpn`
 If the server directory is empty, a new server will be created. Otherwise, the old one will be used.
+
+### Ports
+
+* **443**: Default access port to openvpn.
