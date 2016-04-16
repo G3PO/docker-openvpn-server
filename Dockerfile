@@ -21,16 +21,16 @@ COPY docker-entrypoint /docker-entrypoint
 RUN chmod +x  /docker-entrypoint/*
 
 # Environment variables
-ENV KEY_COUNTRY FR
-ENV KEY_PROVINCE test
-ENV KEY_CITY test
-ENV KEY_ORG test
-ENV KEY_EMAIL test@test.test
+ENV KEY_COUNTRY EN
+ENV KEY_PROVINCE none
+ENV KEY_CITY none
+ENV KEY_ORG none
+ENV KEY_EMAIL xxxx@xxx.xx
 ENV KEY_CN test
-ENV KEY_NAME notatest
+ENV KEY_NAME None
 ENV SERVER_IP A.B.C.D
 ENV SERVER_PORT 443
-ENV SHARE_PORT_CONTAINER test
+ENV SHARE_PORT_CONTAINER none
 ENV SHARE_PORT_NUMBER 443
 ENV KEY_ALTNAMES="DNS:${KEY_CN}"
 ENV KEY_SIZE=2048
